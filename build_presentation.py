@@ -349,7 +349,7 @@ N3 = """PRESENTER: VIPUL KRISHNA PANDEY (Slides 1-8)
 This slide introduces the solution: EKATVA as a single command interface that coordinates several connected applications and produces one result. It also clarifies the difference between a normal chatbot and an agent.
 
 2) SPEAKING SCRIPT
-"Our solution: EKATVA is a proposed AI-powered Personal Digital Agent. The idea is simple — a single interface where you type or speak one natural command. Behind the scenes, EKATVA coordinates the relevant connected applications, and you get one final result. The flow in the visual shows it: one interface, one command, multiple connected apps, coordinated execution, one result. Now, one important distinction. A chatbot is like a knowledgeable friend — you ask, it answers. An AI agent is like an assistant — you ask, and it actually does the job for you, step by step, with your permission. A chatbot can tell you how to organise your calendar. An agent like EKATVA would actually prepare that calendar for you — after showing you and asking for approval where needed."
+"Our solution: EKATVA is a proposed AI-powered Personal Digital Agent. The idea is simple — a single interface where you type or speak one natural command. Behind the scenes, EKATVA coordinates the relevant connected applications, and you get one final result. The flow in the visual shows it: one interface, one command, multiple connected apps, coordinated execution, one result. Now, one important distinction. A chatbot is like a knowledgeable friend — you ask, it answers. An AI agent is like an assistant — you ask, and it actually does the job for you, step by step, with your permission. A chatbot can tell you how to organise your calendar. An agent like EKATVA would actually prepare that calendar for you — after showing you and asking for approval where needed. And EKATVA is proposed to be internet-connected: it can search the web for current information, browse pages safely, and answer with clickable source citations — so you always know where every fact came from."
 
 3) TECHNICAL TERMS SIMPLY
 - Natural-language command: speaking or typing in normal English, like 'organise my tomorrow', instead of clicking buttons or setting up workflows.
@@ -371,7 +371,7 @@ N4 = """PRESENTER: VIPUL KRISHNA PANDEY (Slides 1-8)
 This slide walks through the working of EKATVA in 9 steps, plus a real-world example command, so the workflow is easy to visualise.
 
 2) SPEAKING SCRIPT
-"Let me walk you through how EKATVA would work, in plain steps. One — the user opens EKATVA. Two — gives a command by text or voice. Three — the AI understands the intention behind the words. Four — it breaks the request into smaller tasks. Five — it selects the relevant connected applications. Six — it checks permissions and prepares the actions. Seven — and this is important — the user approves any sensitive action first. Eight — the agent executes the supported tasks. Nine — EKATVA verifies what happened and reports the results clearly. Now look at the example on the right. The user says: 'Check my important emails, identify pending tasks, add them to Notion and organise my calendar for tomorrow.' Notice the approval step — nothing irreversible happens without the user's confirmation."
+"Let me walk you through how EKATVA would work, in plain steps. One — the user opens EKATVA. Two — gives a command by text or voice. Three — the AI understands the intention behind the words. Four — it breaks the request into smaller tasks. Five — it selects the relevant connected applications. Six — it checks permissions and prepares the actions. Seven — and this is important — the user approves any sensitive action first. Eight — the agent executes the supported tasks. Nine — EKATVA verifies what happened and reports the results clearly. Now look at the example on the right. The user says: 'Check my important emails, identify pending tasks, add them to Notion and organise my calendar for tomorrow.' Notice the approval step — nothing irreversible happens without the user's confirmation. Also notice that the agent now selects tools, apps and web sources as part of its planning, and once it finishes, it verifies what actually happened and shows cited sources next to each answer."
 
 3) TECHNICAL TERMS SIMPLY
 - Intent: what the user actually wants, even if the English is loose. 'Organise my tomorrow' means plan my schedule.
@@ -393,7 +393,7 @@ N5 = """PRESENTER: VIPUL KRISHNA PANDEY (Slides 1-8)
 This slide markets the vision in four everyday categories: personal life, communication, student life and professional work. It clearly states these are proposed capabilities.
 
 2) SPEAKING SCRIPT
-"We have grouped EKATVA's proposed capabilities into four simple categories. Personal life: organise schedules, set reminders, manage daily plans. Communication: summarise important emails, prepare email replies, and identify urgent messages first. Student life: track assignments, organise study schedules, create task lists and manage deadlines. Professional work: organise meetings, coordinate tasks, prepare daily summaries and automate repetitive workflows. One honest disclaimer, which we feel is important: all of these are proposed capabilities. They depend on which integrations we support and what permissions each user grants. We are not claiming a finished product — this is what we would build towards, starting with the MVP."
+"We have grouped EKATVA's proposed capabilities into four simple categories. Personal life: organise schedules, set reminders, manage daily plans. Communication: summarise important emails, prepare email replies, and identify urgent messages first. Student life: track assignments, organise study schedules, create task lists and manage deadlines. Professional work: organise meetings, coordinate tasks, prepare daily summaries and automate repetitive workflows. One honest disclaimer, which we feel is important: all of these are proposed capabilities. They depend on which integrations we support and what permissions each user grants. We are not claiming a finished product — this is what we would build towards, starting with the MVP. You will also notice two newer internet abilities in this vision: monitoring websites for changes, and summarising web pages with citations — the same principle as everything else: one command, cited results."
 
 3) TECHNICAL TERMS SIMPLY
 - Integration: an app officially connected to EKATVA through its approved interface (API), like Gmail being connected.
@@ -415,12 +415,13 @@ N6 = """PRESENTER: VIPUL KRISHNA PANDEY (Slides 1-8)
 This is our ONLY technology-stack slide. It shows the proposed stack in layers, explained in simple language so non-technical faculty can follow it.
 
 2) SPEAKING SCRIPT
-"Let me explain the proposed technology in one minute, layer by layer. At the top, the user-facing apps: React Native with Expo for the mobile app, and Next.js with React for the web app. Below that, the backend: Node.js with TypeScript and Fastify — this layer simply manages everything happening behind the scenes. Then the AI layer: OpenAI or Claude models to understand what the user means — and LangGraph, another technical term, which coordinates the agent's multi-step workflow, essentially the brain of the system that plans which step happens when. The data layer uses PostgreSQL with Prisma and a feature called pgvector that lets us store useful memory. The integrations layer uses OAuth 2.0 for secure authorised connections, standard REST APIs, and MCP — a common protocol for connecting tools. And background jobs and deployment: Redis with BullMQ handle tasks that run in the background, and Docker with AWS, Railway or Vercel handle deployment. That is the entire stack in one picture."
+"Let me explain the proposed technology in one minute, layer by layer. At the top, the user-facing apps: React Native with Expo for the mobile app, and Next.js with React for the web app. Below that, the backend: Node.js with TypeScript and Fastify — this layer simply manages everything happening behind the scenes. Then the AI layer: OpenAI or Claude models to understand what the user means — and LangGraph, another technical term, which coordinates the agent's multi-step workflow, essentially the brain of the system that plans which step happens when. The data layer uses PostgreSQL with Prisma and a feature called pgvector that lets us store useful memory. The integrations layer uses OAuth 2.0 for secure authorised connections, standard REST APIs, and MCP — a common protocol for connecting tools. Next, the web and search layer: Tavily and Serper are professional web-search APIs — the agent can run multiple queries in parallel and rank results by relevance, credibility and freshness. Playwright is a browser-automation framework, so the agent can open pages, click through documentation and extract information on its own. And BullMQ also handles scheduled and recurring jobs — like monitoring a webpage for changes. And background jobs and deployment: Redis with BullMQ handle tasks that run in the background, and Docker with AWS, Railway or Vercel handle deployment. That is the entire stack in one picture."
 
 3) TECHNICAL TERMS SIMPLY
 - Backend: the server-side part users never see, which does the actual work.
 - OAuth 2.0: the industry-standard 'Login with...' system — the user explicitly authorises EKATVA, and sensitive passwords are never shared.
 - pgvector: a database feature used to store and retrieve meaningful context.
+- Playwright: an open-source browser-automation tool — the agent can open, click, scroll and read pages safely in a sandbox.
 - Background tasks: jobs like sending a summary that run without the user waiting.
 
 4) EXAMPLE
@@ -437,24 +438,25 @@ The morning-email scenario flows through all layers: app command, backend receiv
 N7 = """PRESENTER: VIPUL KRISHNA PANDEY (Slides 1-8)
 
 1) WHAT THIS SLIDE MEANS
-An honest look at existing solutions — Zapier, n8n, ChatGPT, Lindy and Power Automate — what they already do well, and the user-experience opportunity EKATVA would target.
+An honest look at five real competitors — each is listed with what it already does well AND where it naturally falls short for an everyday personal assistant — followed by the unique position EKATVA would occupy.
 
 2) SPEAKING SCRIPT
-"We researched the existing market honestly, because a good idea must survive real competitors. Zapier connects applications and automates workflows. n8n provides very flexible automation and AI-friendly workflows. ChatGPT already offers connected apps and supported actions. Lindy provides AI assistants for workflows, and Microsoft Power Automate automates business processes. We want to be clear: these products already deliver overlapping capabilities, and we respect them. So where is the space for EKATVA? Not in raw features, but in experience. We propose: a simpler everyday personal-assistant experience for normal users; a unified interface for common personal tasks; natural-language coordination across supported applications; clear visibility into exactly what the AI is doing; and a friendly permission and approval system. Many existing tools are powerful but geared towards builders and power users. EKATVA would target the everyday user — especially students and professionals."
+"We researched the market honestly, because a good idea must survive real competitors — so for each tool we looked at BOTH its strength and its gap. Zapier connects thousands of apps with reliable automation — its gap: users must manually build and maintain trigger-action workflows. n8n is flexible and open-source — but its node-based design is built for developers. ChatGPT already offers connected apps and actions — but it is a general chat product; it does not run daily briefings, monitor pages, or give a structured approval system for personal tasks. Lindy automates business workflows with AI assistants — but it is geared to business processes, not personal life. Power Automate is powerful and enterprise-grade — but office and IT oriented, with complex setup. Now our unique position on the right: no single tool today combines chatbot simplicity, agent actions, automation, personal memory, briefings, monitoring, learning and a transparent approval system in ONE everyday product. Each competitor covers one layer; EKATVA is designed to combine all the layers — free to start, and built students-and-professionals first. The fast-growing Deep Research category — Perplexity, ChatGPT and Gemini — validates the demand for autonomous, cited research assistants. We want to be clear and fair: these products already deliver overlapping capabilities, and we are not claiming they cannot do what we plan — our claim is about the combined everyday experience."
 
 3) TECHNICAL TERMS SIMPLY
-- Power user: someone technical who enjoys configuring complex tools.
-- Onboarding: the first-time experience of a new user who wants value in minutes, not hours.
+- Trigger-action workflow: a rule you set up yourself — 'when this email arrives, do that task'. Powerful, but setup is manual work.
+- Power user: someone technical who enjoys configuring complex tools. Everyday users want results in minutes, not hours.
 
 4) EXAMPLE
-Setting up a Zapier workflow involves triggers, actions and mapping fields. An everyday user may prefer simply writing: 'When I get an important email, make me a task.'
+Setting up a Zapier 'important email becomes a task' workflow takes triggers, fields and testing. The same user in EKATVA just types: 'Important emails become tasks in Notion.'
 
 5) TRANSITION
-"Based on that positioning, here is what we believe makes EKATVA different — and I want to present it fairly."
+"Based on that positioning, here is what we would build EKATVA around — presented fairly. Next slide."
 
 6) POSSIBLE FACULTY QUESTIONS
-- Can't ChatGPT already do all this? (It supports connected apps and actions, yes. Our focus is the everyday, Indian, multi-app personal experience with a clear transparency-and-approval layer — an experience we want to build better, not a claim that others cannot do it.)
-- Why did you not compare exact pricing? (Pricing changes frequently; we compared capability and experience categories instead.)"""
+- Can't ChatGPT already do all this? (It supports connected actions, yes — but a unified personal command centre with proactive briefings, monitoring, structured approvals and learning memory is an experience gap we aim to fill better, not a claim that others cannot eventually.)
+- What if Zapier adds AI assistants? (That validates the category; our defence is focus on the everyday Indian personal use-case, simplicity and price — and staying ahead on the combined experience.)
+- Is this comparison fair? (It reflects each product's typical positioning — features vary and evolve, which we say on the slide itself.)"""
 
 N8 = """PRESENTER: VIPUL KRISHNA PANDEY (Slides 1-8)
 
@@ -462,7 +464,7 @@ N8 = """PRESENTER: VIPUL KRISHNA PANDEY (Slides 1-8)
 Our proposed differentiation in seven points, plus a fair three-way comparison: a conventional chatbot, a workflow automation tool, and EKATVA.
 
 2) SPEAKING SCRIPT
-"Seven things we would build EKATVA around. One — a single command centre for everyday digital activities. Two — natural-language interaction, so users never have to manually build complex workflows. Three — coordination of tasks across connected apps. Four — personal context and preferences, always under user controls. Five — proactive reminders and daily briefings. Six — a transparent execution history, so users always see what the AI did. Seven — user approval before any sensitive action. On the right, a fair comparison. A conventional chatbot understands language but mostly stops at conversation — it does not take actions. A workflow automation tool does connect apps and take actions, but usually requires the user to build and maintain workflows manually. EKATVA is designed to combine both — understand the language and do the coordinated work — with transparency and approvals on top. Our line: EKATVA is not just about connecting apps. It is about making your digital life easier to manage."
+"Seven things we would build EKATVA around. One — a single command centre for everyday digital activities. Two — natural-language interaction, so users never have to manually build complex workflows. Three — coordination of tasks across connected apps. Four — personal context and preferences, always under user controls. Five — proactive reminders and daily briefings. Six — a transparent execution history, so users always see what the AI did. Seven — user approval before any sensitive action. And beyond those, two special strengths: the proposed agent can browse the web and run Deep Research — planning its own searches, verifying claims across independent sources and writing cited reports — and it can learn from documentation it reads, storing what it learned with its source and timestamp so it can use that knowledge in future tasks. On the right, a fair comparison. A conventional chatbot understands language but mostly stops at conversation — it does not take actions. A workflow automation tool does connect apps and take actions, but usually requires the user to build and maintain workflows manually. EKATVA is designed to combine both — understand the language and do the coordinated work — with transparency and approvals on top. Our line: EKATVA is not just about connecting apps. It is about making your digital life easier to manage."
 
 3) TECHNICAL TERMS SIMPLY
 - Proactive: the assistant reminds or suggests before you ask, e.g. a morning briefing.
@@ -507,7 +509,7 @@ N10 = """PRESENTER: MOHAN SHARMA (Slides 9-15)
 This slide explains our realistic Minimum Viable Product — what would be in the first version — plus a practical demo scenario and its expected sequence.
 
 2) SPEAKING SCRIPT
-"MVP means Minimum Viable Product — the smallest useful version we would build first. Notice the wording on this slide: none of this is completed development. This is our proposed build plan. The MVP would include user registration and login; connecting Gmail, Google Calendar and Notion; a natural-language command interface; AI understanding of instructions; multi-step task planning; email summarisation; email reply preparation; calendar event creation; Notion task creation; a full execution history; and — again — approval before sensitive actions. Here is a practical demonstration scenario: 'Check my emails, find important tasks, add them to Notion and organise my calendar for tomorrow.' The expected sequence: read authorised emails, identify important tasks, prepare a task list, ask for approval, create the approved Notion tasks, review calendar slots, suggest or create an approved schedule, and finally display a summary. Thirteen features, one clear flow — ambitious but realistic with the stack Vipul showed."
+"MVP means Minimum Viable Product — the smallest useful version we would build first. Notice the wording on this slide: none of this is completed development. This is our proposed build plan. The MVP would include user registration and login; connecting Gmail, Google Calendar and Notion; a natural-language command interface; AI understanding of instructions; multi-step task planning; email summarisation; email reply preparation; calendar event creation; Notion task creation; a full execution history; and — again — approval before sensitive actions. We have also added two internet-first features to the MVP plan: a Deep Research mode — where the agent plans its own searches, studies sources and verifies claims before writing a report — and clickable web citations in every answer. Here is a practical demonstration scenario: 'Check my emails, find important tasks, add them to Notion and organise my calendar for tomorrow.' The expected sequence: read authorised emails, identify important tasks, prepare a task list, ask for approval, create the approved Notion tasks, review calendar slots, suggest or create an approved schedule, and finally display a summary. Thirteen features, one clear flow — ambitious but realistic with the stack Vipul showed."
 
 3) TECHNICAL TERMS SIMPLY
 - MVP: the smallest version that delivers the core value; you build it first, then improve with feedback.
@@ -576,7 +578,7 @@ N13 = """PRESENTER: MOHAN SHARMA (Slides 9-15)
 Real challenges a startup like this faces — privacy, AI mistakes, app restrictions, AI costs and user trust — with concrete proposed solutions for each.
 
 2) SPEAKING SCRIPT
-"Let me present the uncomfortable truths. One, privacy and security. Solution: OAuth authentication — that means the user explicitly authorises us through the app provider, we store encrypted tokens, we request only limited permissions, and we keep audit logs of every access. Two, AI mistakes. AI is not perfect, so: we verify actions, show clear execution previews before anything runs, and require user approval for sensitive actions. Three, application restrictions — some apps limit external access. Solution: start strictly with official APIs and supported integrations, not hacks. Four, AI operating costs — running AI models costs money on every task. Solution: usage limits, efficient models, and subscription plans that cover costs. Five, user trust — people must believe an AI can touch their email. Solution: a transparent activity history and full control over connected accounts. One key point: connecting an email address or phone number does not automatically grant access to every application — each service needs its own separate authorised integration."
+"Let me present the uncomfortable truths. One, privacy and security. Solution: OAuth authentication — that means the user explicitly authorises us through the app provider, we store encrypted tokens, we request only limited permissions, and we keep audit logs of every access. Two, AI mistakes. AI is not perfect, so: we verify actions, show clear execution previews before anything runs, and require user approval for sensitive actions. Three, application restrictions — some apps limit external access. Solution: start strictly with official APIs and supported integrations, not hacks. Four, AI operating costs — running AI models costs money on every task. Solution: usage limits, efficient models, and subscription plans that cover costs. Five, user trust — people must believe an AI can touch their email. Solution: a transparent activity history and full control over connected accounts. Six, web misinformation — the internet is full of wrong and outdated information. Solution: cross-verification across independent sources, citations with confidence scores, and a sandboxed browser that never touches private internal networks. One key point: connecting an email address or phone number does not automatically grant access to every application — each service needs its own separate authorised integration."
 
 3) TECHNICAL TERMS SIMPLY
 - OAuth: 'delegate limited access without sharing your password' — standard technology used by Google sign-in.
@@ -599,7 +601,7 @@ N14 = """PRESENTER: MOHAN SHARMA (Slides 9-15)
 A realistic five-phase roadmap: from MVP, to more integrations, to a personal AI manager, to advanced automation, and finally a unified AI ecosystem.
 
 2) SPEAKING SCRIPT
-"Here is our roadmap, kept deliberately realistic. Phase 1 is the MVP you saw: Gmail, Google Calendar, Notion, and the basic AI agent. Phase 2, more integrations: expand supported applications and workflows based on what users ask for most. Phase 3, the personal AI manager: deepen user context, remember preferences, and offer proactive reminders — the assistant becomes personal. Phase 4, advanced automation: explore approved browser and device automation, only where it is technically and legally supported — we are aware there are legitimate limits here. Phase 5, the unified AI ecosystem: build toward a comprehensive personal digital agent — essentially, your entire digital world on one command. Notice the honest note on the timeline: phases 4 and 5 depend on external platforms and regulations. We are showing ambition, but we are not promising magic."
+"Here is our roadmap, kept deliberately realistic. Phase 1 is the MVP you saw: Gmail, Google Calendar, Notion, and the basic AI agent. Phase 2, more integrations: expand supported applications, add website and GitHub repository monitoring, and scheduled research digests. Phase 3, the personal AI manager: deepen user context, remember preferences, actively learn from web documentation — with source and timestamp memory — and offer proactive reminders — the assistant becomes personal. Phase 4, advanced automation: deep browser automation with Playwright and approved device actions, only where it is technically and legally supported — we are aware there are legitimate limits here. Phase 5, the unified AI ecosystem: build toward a comprehensive personal digital agent — essentially, your entire digital world on one command. Notice the honest note on the timeline: phases 4 and 5 depend on external platforms and regulations. We are showing ambition, but we are not promising magic."
 
 3) TECHNICAL TERMS SIMPLY
 - Proactive reminders: the assistant tells you what matters before you ask, like a briefing.
@@ -723,10 +725,12 @@ tx(s, 0.95, 2.0, 5.6, 1.15, [dict(text="EKATVA is a proposed AI-powered Personal
 bullets(s, 0.95, 3.3, 5.6, 3.2, [
     "One interface",
     "One natural-language command",
+    "Internet intelligence — web search & cited sources",
     "Multiple connected applications",
+    "Autonomous browsing & Deep Research",
     "Coordinated task execution",
     "One final result",
-], size=14, gap=10)
+], size=13, gap=7)
 
 # vertical pipeline visual (right)
 rx = 7.35
@@ -757,11 +761,11 @@ steps = [
     "Gives a text or voice command",
     "AI understands the intention",
     "Request divided into smaller tasks",
-    "Agent selects relevant connected apps",
+    "Agent selects tools, apps & web sources",
     "Permissions checked, actions prepared",
     "User approves sensitive actions",
     "Agent executes supported tasks",
-    "EKATVA verifies and reports results",
+    "EKATVA verifies, cites sources & reports",
 ]
 gx, gy, cw, chh, gp = 0.55, 1.72, 2.06, 0.86, 0.16
 for i, st in enumerate(steps):
@@ -798,7 +802,7 @@ for label, colr in mini:
     my += 0.72
 tx(s, 7.55, 6.35, 5.0, 0.3, [dict(text="Works the same with text or voice.", size=10,
                                   color=MUTED, italic=True)])
-tx(s, 0.55, 6.7, 6.8, 0.3, [dict(text="Every step stays visible — sensitive actions always wait for user approval.",
+tx(s, 0.55, 6.7, 6.8, 0.3, [dict(text="Every step stays visible — sensitive actions wait for approval, and answers carry clickable source citations.",
                                  size=10.5, color=BLUE, italic=True)])
 footer(s, 4)
 notes(s, N4)
@@ -809,9 +813,10 @@ header(s, "SLIDE 05  —  CAPABILITIES", "What Can EKATVA Do?",
        "Everyday capabilities grouped into four categories (proposed, subject to integrations and permissions)")
 
 cats = [
-    ("PERSONAL LIFE", ["Organise schedules", "Set reminders", "Manage daily plans"]),
+    ("PERSONAL LIFE", ["Organise schedules", "Set reminders", "Manage daily plans",
+                       "Monitor pages & track changes"]),
     ("COMMUNICATION", ["Summarise important emails", "Prepare email replies",
-                       "Identify urgent messages"]),
+                       "Identify urgent messages", "Summarise web pages with citations"]),
     ("STUDENT LIFE", ["Track assignments", "Organise study schedules",
                       "Create task lists", "Manage deadlines"]),
     ("PROFESSIONAL WORK", ["Organise meetings", "Coordinate tasks",
@@ -848,27 +853,30 @@ bands = [
     ("INTEGRATIONS", [("OAuth 2.0", "Secure authorised sign-in"),
                       ("REST APIs", "Standard app connections"),
                       ("MCP", "Common protocol for tool access")]),
+    ("WEB & SEARCH", [("Tavily / Serper APIs", "Multi-provider intelligent web search"),
+                      ("Playwright", "Autonomous browser automation & extraction"),
+                      ("BullMQ Jobs", "Scheduled & recurring background tasks")]),
     ("INFRASTRUCTURE", [("Redis + BullMQ", "Background task queue"),
                         ("Docker + AWS / Railway / Vercel", "Deployment")]),
 ]
-by, bh, bgp = 1.68, 0.74, 0.095
+by, bh, bgp = 1.66, 0.62, 0.08
 for i, (nm, comps) in enumerate(bands):
     y = by + i * (bh + bgp)
     band = card(s, 0.55, y, 2.0, bh, fill=CARD_HI, line=BORDER, radius=0.18)
-    tx(s, 0.62, y, 1.86, bh, [dict(text=nm, size=10, color=BLUE, bold=True,
+    tx(s, 0.62, y, 1.86, bh, [dict(text=nm, size=9.5, color=BLUE, bold=True,
                                    align=PP_ALIGN.CENTER)], anchor=MSO_ANCHOR.MIDDLE)
     ncols = 3 if len(comps) == 3 else 2
     colw = (9.7 if ncols == 3 else 9.7)
     if len(comps) == 1 or (ncols == 2 and comps[1][0] == ""):
-        chip(s, 2.72, y + 0.02, 9.7, bh - 0.04, comps[0][0], size=12.5,
-             fill=CARD, line=BORDER, sub=comps[0][1])
+        chip(s, 2.72, y + 0.02, 9.7, bh - 0.04, comps[0][0], size=12,
+             fill=CARD, line=BORDER, sub=comps[0][1], sub_size=8.5)
     else:
         w_ = (9.7 - (ncols - 1) * 0.15) / ncols
         for j, (t_, d_) in enumerate(comps):
             chip(s, 2.72 + j * (w_ + 0.15), y + 0.02, w_, bh - 0.04, t_,
-                 size=12.5, fill=CARD, line=BORDER, sub=d_, sub_size=9)
-tx(s, 0.55, 6.72, 12.2, 0.3,
-   [dict(text="Data flows top-down:  your command  \u2192  backend  \u2192  AI plan  \u2192  authorised app actions  \u2192  your result.",
+                 size=12, fill=CARD, line=BORDER, sub=d_, sub_size=8.5)
+tx(s, 0.55, 6.62, 12.2, 0.3,
+   [dict(text="Data flows top-down:  your command  \u2192  backend  \u2192  AI plan  \u2192  web + authorised app actions  \u2192  your cited result.",
          size=10.5, color=MUTED, italic=True)])
 footer(s, 6)
 notes(s, N6)
@@ -879,35 +887,50 @@ header(s, "SLIDE 07  —  MARKET RESEARCH", "Existing Solutions & Our Opportunit
        "Honest view of real products in the market today")
 
 comps = [
-    ("Zapier", "Connects applications and automates workflows"),
-    ("n8n", "Flexible automation and AI-friendly workflows"),
-    ("ChatGPT", "Connected apps and supported actions"),
-    ("Lindy", "AI assistants for workflows"),
-    ("Power Automate", "Automates business processes"),
+    ("Zapier", "Connects thousands of apps, reliable workflow automation",
+     "Gap: users must manually build & maintain trigger-action workflows"),
+    ("n8n", "Flexible, open-source automation with AI-friendly nodes",
+     "Gap: technical setup and node wiring — built for developers"),
+    ("ChatGPT", "Connected apps and supported in-chat actions",
+     "Gap: general chat product — no unified daily briefings, monitoring or approvals"),
+    ("Lindy", "AI assistants that automate business workflows",
+     "Gap: geared to business processes, not an everyday personal command centre"),
+    ("Power Automate", "Enterprise-grade business process automation",
+     "Gap: office/IT oriented with complex setup — not for personal use"),
 ]
-cy0 = 1.75
-for i, (nm, ds) in enumerate(comps):
-    y = cy0 + i * 0.98
-    card(s, 0.55, y, 6.5, 0.86, fill=CARD, line=BORDER, radius=0.16)
-    chip(s, 0.75, y + 0.17, 1.85, 0.52, nm, size=12.5, fill=CARD_HI, line=BLUE_D)
-    tx(s, 2.85, y, 4.05, 0.86,
-       [dict(text=ds, size=11, color=SOFT, line=1.05)], anchor=MSO_ANCHOR.MIDDLE)
+cy0 = 1.72
+for i, (nm, ds, gap) in enumerate(comps):
+    y = cy0 + i * 0.975
+    card(s, 0.55, y, 6.5, 0.9, fill=CARD, line=BORDER, radius=0.16)
+    chip(s, 0.75, y + 0.09, 1.72, 0.44, nm, size=11, fill=CARD_HI, line=BLUE_D)
+    tx(s, 2.6, y + 0.09, 4.3, 0.46,
+       [dict(text=ds, size=9.5, color=SOFT, line=1.02)], anchor=MSO_ANCHOR.MIDDLE)
+    tx(s, 0.78, y + 0.55, 6.05, 0.32,
+       [dict(text=gap, size=9, color=DANGER, italic=True, line=1.0)],
+       anchor=MSO_ANCHOR.TOP)
 
-oc = card(s, 7.3, 1.75, 5.48, 4.92, fill=CARD_HI, line=BLUE, radius=0.05)
-tx(s, 7.55, 1.92, 5.0, 0.4, [dict(text="THE EKATVA OPPORTUNITY", size=11,
+oc = card(s, 7.3, 1.72, 5.48, 4.98, fill=CARD_HI, line=BLUE, radius=0.05)
+tx(s, 7.55, 1.88, 5.0, 0.4, [dict(text="WHY EKATVA IS DIFFERENT", size=11,
                                   color=BLUE, bold=True)])
-tx(s, 7.55, 2.32, 5.0, 0.65, [dict(text="These products already deliver overlapping capabilities."
-                                        " Our opportunity is a better everyday experience:",
-                                   size=10.5, color=SOFT, italic=True, line=1.1)])
-bullets(s, 7.55, 3.08, 5.0, 3.5, [
-    "Simpler everyday personal digital assistant",
-    "One unified interface for common personal tasks",
-    "Natural-language coordination across supported apps",
-    "Clear visibility into what the AI is doing",
-    "User-friendly permission & approval system",
-], size=11.5, gap=9)
-tx(s, 0.55, 6.75, 6.6, 0.3, [dict(text="Existing tools are powerful — but often built for technical users who design workflows.",
-                                  size=10, color=MUTED, italic=True)])
+tx(s, 7.55, 2.26, 5.0, 0.6, [dict(text="Each tool above is strong at one layer. EKATVA is designed to combine every layer in one personal product:",
+                                   size=10, color=SOFT, italic=True, line=1.08)])
+bullets(s, 7.55, 2.98, 5.0, 2.6, [
+    "Chatbot simplicity + agent actions + automation, together",
+    "Zero workflow building — commands in plain language",
+    "Personal memory, daily briefings & proactive reminders",
+    "Transparent history with per-action approvals",
+    "Learns from web docs; monitors pages & GitHub repos",
+    "Freemium from \u20B90, built for students & professionals",
+], size=10.5, gap=7, line=1.05)
+tx(s, 7.55, 5.62, 5.0, 0.55, [dict(text="Fast-growing Deep Research category — Perplexity, ChatGPT and Gemini validate the demand for autonomous, cited research assistants.",
+                                   size=9, color=MUTED, italic=True, line=1.08)])
+ub = card(s, 7.55, 6.22, 4.98, 0.44, fill=None, line=GOLD, radius=0.3)
+tx(s, 7.68, 6.22, 4.75, 0.44,
+   [dict(text="Unique: no single tool combines ALL of these in one everyday command centre.",
+         size=9.5, color=GOLD, italic=True, bold=True, align=PP_ALIGN.CENTER, line=1.0)],
+   anchor=MSO_ANCHOR.MIDDLE)
+tx(s, 0.55, 6.75, 6.6, 0.45, [dict(text="Typical positioning in each category — existing products are powerful, and exact features vary and evolve fast.",
+                                   size=9.5, color=MUTED, italic=True, line=1.05)])
 footer(s, 7)
 notes(s, N7)
 
@@ -919,13 +942,16 @@ header(s, "SLIDE 08  —  WHY EKATVA?", "Our Differentiation",
 pil = ["One command centre for everyday digital life",
        "Natural language instead of building workflows",
        "Coordination of tasks across connected apps",
+       "Autonomous web browsing & Deep Research",
+       "Internet intelligence with cited, ranked sources",
+       "Learns from web docs with source & timestamp memory",
        "Personal context with full user controls",
-       "Proactive reminders & daily briefings",
+       "Proactive reminders, daily briefings & monitoring",
        "Transparent execution history",
        "User approval before sensitive actions"]
 for i, p_ in enumerate(pil):
-    tx(s, 0.55, 1.68 + i * 0.6, 4.6, 0.55,
-       [dict(text="\u2022  " + p_, size=11.5, color=SOFT)], anchor=MSO_ANCHOR.MIDDLE)
+    tx(s, 0.55, 1.7 + i * 0.47, 4.65, 0.45,
+       [dict(text="\u2022  " + p_, size=10.5, color=SOFT)], anchor=MSO_ANCHOR.MIDDLE)
 
 # comparison card
 cc = card(s, 5.35, 1.68, 7.43, 4.45, fill=CARD, line=BORDER)
@@ -1017,14 +1043,16 @@ mvp = ["User registration & login", "Connect Gmail", "Connect Google Calendar",
        "AI understanding of instructions", "Multi-step task planning",
        "Email summarisation", "Email reply preparation",
        "Calendar event creation", "Notion task creation",
-       "Execution history", "Approval before sensitive actions"]
-gx0, gy0, cw2, chh2 = 0.55, 1.72, 2.94, 0.56
+       "Deep Research mode (search, verify, report)",
+       "Web citations in answers", "Execution history",
+       "Approval before sensitive actions"]
+gx0, gy0, cw2, chh2 = 0.55, 1.72, 2.94, 0.5
 for i, m in enumerate(mvp):
     r_, c_ = divmod(i, 2)
-    x = gx0 + c_ * (cw2 + 0.16); y = gy0 + r_ * (chh2 + 0.115)
-    chip(s, x, y, cw2, chh2, "\u2713  " + m, size=10.5, color=WHITE, fill=CARD,
+    x = gx0 + c_ * (cw2 + 0.16); y = gy0 + r_ * (chh2 + 0.1)
+    chip(s, x, y, cw2, chh2, "\u2713  " + m, size=10, color=WHITE, fill=CARD,
          line=BORDER, align=PP_ALIGN.LEFT, radius=0.3)
-tx(s, 0.55, 6.72, 6.2, 0.35, [dict(text="13 proposed features — nothing shown is completed development.",
+tx(s, 0.55, 6.55, 6.3, 0.5, [dict(text="15 proposed features — nothing shown is completed development.",
                                    size=10, color=GOLD, italic=True)])
 
 # demo card
@@ -1133,21 +1161,22 @@ header(s, "SLIDE 13  —  CHALLENGES", "Challenges & Solutions",
        "Realistic startup risks — and how we would address them")
 
 ch = [
-    ("Privacy & Security", "OAuth authentication, encrypted tokens, limited permissions, audit logs"),
+    ("Privacy & Security", "OAuth authentication, encrypted tokens, limited permissions, audit logs, sandboxed execution"),
     ("AI Mistakes", "Action verification, clear execution previews, user approvals"),
     ("Application Restrictions", "Start with official APIs and supported integrations only"),
     ("AI Operating Costs", "Usage limits, efficient models, subscription plans cover compute"),
     ("User Trust", "Transparent activity history & full control over connected accounts"),
+    ("Web Misinformation", "Cross-verification across independent sources, citations & confidence scores"),
 ]
-y0, rh = 1.72, 0.82
+y0, rh = 1.7, 0.7
 for i, (c_, sl) in enumerate(ch):
-    y = y0 + i * (rh + 0.12)
+    y = y0 + i * (rh + 0.09)
     card(s, 0.55, y, 4.3, rh, fill=CARD, line=DANGER, radius=0.12)
-    tx(s, 0.8, y, 3.9, rh, [dict(text=c_, size=12.5, color=DANGER, bold=True)],
+    tx(s, 0.8, y, 3.95, rh, [dict(text=c_, size=11.5, color=DANGER, bold=True)],
        anchor=MSO_ANCHOR.MIDDLE)
     arrow_right(s, 4.98, y + rh / 2 - 0.13, 0.5, 0.26, fill=PURPLE)
     card(s, 5.6, y, 7.18, rh, fill=CARD_HI, line=BORDER, radius=0.12)
-    tx(s, 5.85, y, 6.7, rh, [dict(text=sl, size=12, color=WHITE, line=1.08)],
+    tx(s, 5.85, y, 6.75, rh, [dict(text=sl, size=11, color=WHITE, line=1.05)],
        anchor=MSO_ANCHOR.MIDDLE)
 nb = card(s, 0.55, 6.42, 12.23, 0.5, fill=CARD, line=GOLD, radius=0.2)
 tx(s, 0.8, 6.42, 11.7, 0.5,
@@ -1164,9 +1193,10 @@ header(s, "SLIDE 14  —  ROADMAP", "The Road Ahead",
 
 phases5 = [
     ("PHASE 1\nMVP", "Gmail, Google Calendar,\nNotion + basic AI agent", False),
-    ("PHASE 2\nMORE INTEGRATIONS", "Expand supported\napps & workflows", False),
-    ("PHASE 3\nPERSONAL AI MANAGER", "User context, preferences,\nproactive reminders", False),
-    ("PHASE 4\nADVANCED AUTOMATION", "Approved browser / device\nautomation where supported", False),    ("PHASE 5\nUNIFIED AI ECOSYSTEM", "Toward a comprehensive\npersonal digital agent", True),
+    ("PHASE 2\nMORE INTEGRATIONS", "Expand apps, website &\nGitHub monitoring", False),
+    ("PHASE 3\nPERSONAL AI MANAGER", "Context, preferences,\nlearning from web docs", False),
+    ("PHASE 4\nADVANCED AUTOMATION", "Deep browser automation\n(Playwright) where approved", False),
+    ("PHASE 5\nUNIFIED AI ECOSYSTEM", "Toward a comprehensive\npersonal digital agent", True),
 ]
 tl = arrow_right(s, 0.55, 3.52, 12.23, 0.4, fill=PURPLE_D)
 px0, pw3, pgap3 = 0.55, 2.32, 0.17
